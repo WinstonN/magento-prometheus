@@ -39,10 +39,11 @@ class Littlemanco_Prometheus_Model_Observer
             ->getGauge(
                 'cron_execution_timestamp',
                 [
-                    'metric_help' => 'The last time (in unix time) Cron was executed'
+                    'metric_help' => 'The last time (in unix time) Cron was executed',
+                    'label_titles' => []
                 ]
             )
-            ->update(now());
+            ->update(time());
     }
 
     /**
